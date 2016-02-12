@@ -23,7 +23,7 @@ router.get('/tile', function (req, res, next) {
   function _genFileNameSuffix (col, row, zoom) {
     return '_row' + row + '_col' + col + '_zoom' + zoom;
   }
-  var fileName = 'pic_of_me' + _genFileNameSuffix(col, row, zoom) + '.jpg';
+  var fileName = 'CERN_Aerial_View' + _genFileNameSuffix(col, row, zoom) + '.jpg';
   res.sendFile(fileName, options, function (err) {
     if (err) {
       console.log(err);
