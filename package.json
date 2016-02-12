@@ -19,7 +19,8 @@
   "homepage": "https://github.com/ZacharyRSmith/transcriptic#readme",
   "dependencies": {
     "bluebird": "^3.3.0",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
   },
   "devDependencies": {
     "gm": "^1.21.1",

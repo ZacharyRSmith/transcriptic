@@ -1,0 +1,61 @@
+<canvas id="canvas" width="320" height="240"></canvas>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="lib/jquery.mousewheel.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script>
+  function tile(context, image, tiles){
+    context.drawImage(image, 
+    (image.width/tiles)*0, (image.height/tiles)*0, 
+     image.width/tiles,     image.height/tiles);
+    context.drawImage(image, 
+    (image.width/tiles)*1, (image.height/tiles)*1, 
+     image.width/tiles,     image.height/tiles);
+      // for(r=0; r<tiles; r++){
+      //     for(c=0; c<tiles; c++){
+      //         context.drawImage(image, 
+      //         (image.width/tiles)*r, (image.height/tiles)*c, 
+      //          image.width/tiles,     image.height/tiles);
+      //     }
+      // }
+  }
+          
+
+  function draw() {
+      var ctx = document.getElementById('canvas').getContext('2d');
+
+      // create new image object to use as pattern
+      var img = new Image();
+      //img.width = 40;
+      //img.height = 30;
+      img.src = 'http://secondlife.com/app/image/cd2841a0-4272-0e67-bd71-0d93d1022fc2/2';
+      img.onload = function() {
+
+          /* This is the code that the tile function basically generates        
+          ctx.drawImage(img, 0, 0, img.width/2, img.height/2);
+          ctx.drawImage(img, img.width/2, 0, img.width/2, img.height/2);
+          ctx.drawImage(img, img.width/2, img.height/2, img.width/2, img.height/2);
+          ctx.drawImage(img, 0, img.height/2, img.width/2, img.height/2);
+          */
+          tiles = 3;
+          tile(ctx, img, tiles);
+
+      }
+  }
+  draw();
+</script>
+<script>
+$('#canvas').draggable();
+$('body').on('mousewheel', function(event) {
+  document.body.style.zoom = document.body.style.zoom || 1;
+
+  if (event.deltaY < 0) {
+    // zoom in
+    document.body.style.zoom *= 1.1;
+  } else if (event.deltaY > 0) {
+    // zoom out
+    document.body.style.zoom /= 1.1;
+  }
+});
+</script>

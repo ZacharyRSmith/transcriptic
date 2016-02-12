@@ -21,41 +21,14 @@ function topLeftQuarter (filePath) {
         this.size(function (err, size) {
           this.resize(size.width * 2)
               .stream(function (err, stdout, stderr) {
-                console.log("STDOUT", stdout);
                 var writeStream = fs.createWriteStream(removeLastExtension(filePath) + '_copy.jpg');
+                writeStream.on('close', function () {
+                  console.log("INSIDE 2", writeStream);
+                });
                 stdout.pipe(writeStream)
-                    // .then(function () {
-                      console.log("WRITESTREAM", writeStream);
-                    // });
-
-                setTimeout(function () {
-                  console.log("WRITESTREAM", writeStream);
-                }, 1000);
-                // console.log("STDOUT", stdout);
               });
-              // .stream(function (err, stdout, stderr) {
-              //   // body...
-              // })
-        })
+        });
       });
-  // gm(filePath)
-  //     .size(function (err, size) {
-  //       if (err) { return console.error(err); }
-
-  //       this.resize(size.width)
-  //           .stream(function (err, stdout, stderr) {
-  //             console.log("THIS", this);
-
-  //             this.filesize(function (err, filesize) {
-  //               console.log("SIZE", filesize, 'h');
-  //             })
-  //           });
-  //           // .write(removeLastExtension(filePath) + '_twice.jpg', function (err) {
-  //           //   if (err) { return console.error(err); }
-              
-  //           //   console.log('done');
-  //           // });
-  //     });
 }
 
 // function findMaxZoomLevel (imgSize) {
