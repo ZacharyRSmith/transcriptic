@@ -1,0 +1,20 @@
+{
+  "name": "transcriptic-challenge",
+  "version": "0.1.0",
+  "description": "My solution to a coding challenge from Transcriptic",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZacharyRSmith/transcriptic.git"
+  },
+  "author": "ZacharyRSmith <ZacharySmith4989@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZacharyRSmith/transcriptic/issues"
+  },
+  "homepage": "https://github.com/ZacharyRSmith/transcriptic#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
