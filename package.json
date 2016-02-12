@@ -2,8 +2,10 @@
   "name": "transcriptic-challenge",
   "version": "0.1.0",
   "description": "My solution to a coding challenge from Transcriptic",
-  "main": "index.js",
-  "scripts": {},
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node ./app/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ZacharyRSmith/transcriptic.git"
