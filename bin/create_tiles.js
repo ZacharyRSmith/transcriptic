@@ -13,11 +13,10 @@ var tiler = new Tiler(filePath);
 tiler.setOriginalImageSize(function () {
   tiler.setMaxZoomLevel(function () {
     tiler.setCompressionLevels(function () {
-      tiler.genTileSets(function (res) {
-        console.log(res);
-      }, function (err) {
-        console.error(err);
-      });
+      tiler.genTileSets()
+          .then(function (res) {
+            console.log('genTileSets res:', res);
+          });
     });
   });
 });
