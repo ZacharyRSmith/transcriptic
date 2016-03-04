@@ -12,14 +12,14 @@
 
 ## Usage
 
-* A script that transforms a given image into a set of tile images.
+### A script that transforms a given image into a set of tile images.
 
 ```
 example command:
   ./create_tiles super_large.png
 ```
 
-* A web server with the given endpoints:
+### A web server with the given endpoints:
 
 GET /zoom-levels
 
@@ -35,13 +35,15 @@ GET /zoom-levels
 }
 ```
 
-
 GET /tile?row=2&col=3&zoom=3
 
 - Returns the tile at the specified row, column, and ZoomLevel.
 
-
 NOTE: All API endpoints should respond within 250ms.
+
+### Running the server:
+
+- Manually run `app/index.js` or run `npm start` to spin up a one-off node process of `app/index.js`, or `npm run dev` to spin up a nodemon process of the same.
 
 ## Development
 
